@@ -3,10 +3,8 @@ package kg.tune.AppStudent.service;
 import kg.tune.AppStudent.entity.Payment;
 import kg.tune.AppStudent.enums.PaymentTypeEnum;
 import kg.tune.AppStudent.enums.StatusEnum;
-import org.springframework.stereotype.Service;
 import java.util.List;
 
-@Service
 public interface PaymentService {
     Payment addPayment(Payment payment);
     List<Payment> getAllPayments();

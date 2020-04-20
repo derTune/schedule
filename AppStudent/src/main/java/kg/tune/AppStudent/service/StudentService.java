@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface StudentService {
     Student addStudent(Student student);
     List<Student> getAllStudent();
