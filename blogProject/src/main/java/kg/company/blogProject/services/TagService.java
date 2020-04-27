@@ -1,0 +1,13 @@
+package kg.company.blogProject.services;
+
+import kg.company.blogProject.entities.Tag;
+
+import java.util.List;
+
+public interface TagService {
+    Tag getTagById(Long id);
+    List<Tag> getAllTags();
+    Tag updateTag(Long id, Tag tag);
+    String deleteTagById(Long id);
+    List<Tag> getTagByTagText(String tagText);
+}
