@@ -16,7 +16,6 @@ public interface PostRepo extends JpaRepository<Post, Long> {
     List<Post> getAllByPublicationTime(Date publicationTime);
     List<Post> getAllByPublicationTimeBetween(Date initPublicationTime, Date finalPublicationTime);
     List<Post> getAllByPublicationTimeGreaterThan(Date initRegistrationDate);
-    List<Post> getAllByRatingGrade(Integer ratingGrade);
     @Query("FROM Post_Tag where tag_id = :tagId")
     List<Post> getAllByTag(Long tagId);
 }

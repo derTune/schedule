@@ -15,6 +15,11 @@ public class CategoryServiceImpl implements CategoryService {
     CategoryRepo categoryRepo;
 
     @Override
+    public Category saveCategory(Category category) {
+        return categoryRepo.save(category);
+    }
+
+    @Override
     public Category getCategoryById(Long id) {
         Optional<Category> category = categoryRepo.findById(id);
         return category.get();
@@ -44,7 +49,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<Category> getCategoryByName(String name) {
+    public List<Category> getAllCategoriesByName(String name) {
         return categoryRepo.getAllByName(name);
     }
 }

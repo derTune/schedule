@@ -15,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "post")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -46,7 +47,4 @@ public class Post {
 
     @Column(name = "short_description")
     String shortDescription;
-
-    @Column(name = "rating_grade")
-    Integer ratingGrade;
 }

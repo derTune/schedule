@@ -16,6 +16,11 @@ public class MediaServiceImpl implements MediaService {
     MediaRepo mediaRepo;
 
     @Override
+    public Media save(Media media) {
+        return mediaRepo.save(media);
+    }
+
+    @Override
     public Media getMediaById(Long id) {
         Optional<Media> media = mediaRepo.findById(id);
         return media.get();
@@ -46,12 +51,12 @@ public class MediaServiceImpl implements MediaService {
     }
 
     @Override
-    public List<Media> getMediaByType(MediaType type) {
+    public List<Media> getAllMediaByType(MediaType type) {
         return mediaRepo.getAllByMediaType(type);
     }
 
     @Override
-    public List<Media> getMediaByPostId(Long postId) {
+    public List<Media> getAllMediaByPostId(Long postId) {
         return mediaRepo.getAllByPostId(postId);
     }
 }

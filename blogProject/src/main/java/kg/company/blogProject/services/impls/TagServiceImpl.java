@@ -15,6 +15,11 @@ public class TagServiceImpl implements TagService {
     TagRepo tagRepo;
 
     @Override
+    public Tag save(Tag tag) {
+        return tagRepo.save(tag);
+    }
+
+    @Override
     public Tag getTagById(Long id) {
         Optional<Tag> tag = tagRepo.findById(id);
         return tag.get();
@@ -45,7 +50,12 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
-    public List<Tag> getTagByTagText(String tagText) {
+    public List<Tag> getAllTagsByTagText(String tagText) {
         return tagRepo.getAllByTagText(tagText);
+    }
+
+    @Override
+    public List<Tag> getAllTagsByPost(Long postId) {
+        return tagRepo.getAllByPost(postId);
     }
 }

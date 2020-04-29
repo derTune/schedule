@@ -17,6 +17,11 @@ public class UserServiceImpl implements UserService {
     UserRepo userRepo;
 
     @Override
+    public User saveUser(User user) {
+        return userRepo.save(user);
+    }
+
+    @Override
     public User getUserById(Long id) {
         Optional<User> user = userRepo.findById(id);
         return user.get();
@@ -54,42 +59,42 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUserByNickname(String nickname) {
+    public List<User> getAllUsersByNickname(String nickname) {
         return userRepo.getAllByNickname(nickname);
     }
 
     @Override
-    public List<User> getUserByFirstName(String firstName) {
+    public List<User> getAllUsersByFirstName(String firstName) {
         return userRepo.getAllByFirstName(firstName);
     }
 
     @Override
-    public List<User> getUserByLastName(String lastName) {
+    public List<User> getAllUsersByLastName(String lastName) {
         return userRepo.getAllByLastName(lastName);
     }
 
     @Override
-    public List<User> getUserByFirstNameAndLastName(String firstName, String lastName) {
+    public List<User> getAllUsersByFirstNameAndLastName(String firstName, String lastName) {
         return userRepo.getAllByFirstNameAndLastName(firstName, lastName);
     }
 
     @Override
-    public List<User> getUserByRegistrationDate(Date registrationDate) {
+    public List<User> getAllUsersByRegistrationDate(Date registrationDate) {
         return userRepo.getAllByRegistrationDate(registrationDate);
     }
 
     @Override
-    public List<User> getUserByRegistrationDateBetween(Date initRegistrationDate, Date finalRegistrationDate) {
+    public List<User> getAllUsersByRegistrationDateBetween(Date initRegistrationDate, Date finalRegistrationDate) {
         return userRepo.getAllByRegistrationDateBetween(initRegistrationDate, finalRegistrationDate);
     }
 
     @Override
-    public List<User> getUserByRegistrationDateGreaterThan(Date initRegistrationDate) {
+    public List<User> getAllUsersByRegistrationDateGreaterThan(Date initRegistrationDate) {
         return userRepo.getAllByRegistrationDateGreaterThan(initRegistrationDate);
     }
 
     @Override
-    public List<User> getUserByRole(Role role) {
+    public List<User> getAllUsersByRole(Role role) {
         return userRepo.getAllByRole(role);
     }
 }

@@ -16,6 +16,11 @@ public class PostServiceImpl implements PostService {
     PostRepo postRepo;
 
     @Override
+    public Post savePost(Post post) {
+        return postRepo.save(post);
+    }
+
+    @Override
     public List<Post> getAllPosts() {
         return postRepo.findAll();
     }
@@ -51,37 +56,37 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<Post> getPostByCategoryName(String categoryName) {
+    public List<Post> getAllPostsByCategoryName(String categoryName) {
         return postRepo.getAllByCategory_Name(categoryName);
     }
 
     @Override
-    public List<Post> getPostByTitle(String title) {
+    public List<Post> getAllPostsByTitle(String title) {
         return postRepo.getAllByTitle(title);
     }
 
     @Override
-    public List<Post> getPostByUserId(Long userId) {
+    public List<Post> getAllPostsByUserId(Long userId) {
         return postRepo.getAllByUserId(userId);
     }
 
     @Override
-    public List<Post> getPostByPublicationTime(Date publicationTime) {
+    public List<Post> getAllPostsByPublicationTime(Date publicationTime) {
         return postRepo.getAllByPublicationTime(publicationTime);
     }
 
     @Override
-    public List<Post> getPostByPublicationTimeBetween(Date intiPublicationTime, Date finalPublicationTime) {
+    public List<Post> getAllPostsByPublicationTimeBetween(Date intiPublicationTime, Date finalPublicationTime) {
         return postRepo.getAllByPublicationTimeBetween(intiPublicationTime, finalPublicationTime);
     }
 
     @Override
-    public List<Post> getPostByPublicationTimeGreaterThan(Date initPublicationTime) {
+    public List<Post> getAllPostsByPublicationTimeGreaterThan(Date initPublicationTime) {
         return postRepo.getAllByPublicationTimeGreaterThan(initPublicationTime);
     }
 
     @Override
-    public List<Post> getPostByRatingGrade(Integer ratingGrade) {
-        return postRepo.getAllByRatingGrade(ratingGrade);
+    public List<Post> getAllPostsByTag(Long tagId) {
+        return postRepo.getAllByTag(tagId);
     }
 }

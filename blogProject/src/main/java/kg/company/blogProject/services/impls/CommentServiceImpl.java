@@ -15,6 +15,11 @@ public class CommentServiceImpl implements CommentService {
     CommentRepo commentRepo;
 
     @Override
+    public Comment saveComment(Comment comment) {
+        return commentRepo.save(comment);
+    }
+
+    @Override
     public Comment getCommentById(Long id) {
         Optional<Comment> comment = commentRepo.findById(id);
         return comment.get();
@@ -46,17 +51,17 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> getCommentByCommentText(String commentText) {
+    public List<Comment> getAllCommentsByCommentText(String commentText) {
         return commentRepo.getAllByCommentText(commentText);
     }
 
     @Override
-    public List<Comment> getCommentByUserId(Long userId) {
+    public List<Comment> getAllCommentsByUserId(Long userId) {
         return commentRepo.getAllByUserId(userId);
     }
 
     @Override
-    public List<Comment> getCommentByPostId(Long postId) {
+    public List<Comment> getAllCommentsByPostId(Long postId) {
         return commentRepo.getAllByPostId(postId);
     }
 }

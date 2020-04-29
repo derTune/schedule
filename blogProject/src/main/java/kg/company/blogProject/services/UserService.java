@@ -7,16 +7,17 @@ import java.util.Date;
 import java.util.List;
 
 public interface UserService {
+    User saveUser(User user);
     User getUserById(Long id);
     List<User> getAllUsers();
     User updateUser(Long id, User user);
     String deleteUserById(Long id);
-    List<User> getUserByNickname(String nickname);
-    List<User> getUserByFirstName(String firstName);
-    List<User> getUserByLastName(String lastName);
-    List<User> getUserByFirstNameAndLastName(String firstName, String lastName);
-    List<User> getUserByRegistrationDate(Date registrationDate);
-    List<User> getUserByRegistrationDateBetween(Date initRegistrationDate, Date finalRegistrationDate);
-    List<User> getUserByRegistrationDateGreaterThan(Date initRegistrationDate);
-    List<User> getUserByRole(Role role);
+    List<User> getAllUsersByNickname(String nickname);
+    List<User> getAllUsersByFirstName(String firstName);
+    List<User> getAllUsersByLastName(String lastName);
+    List<User> getAllUsersByFirstNameAndLastName(String firstName, String lastName);
+    List<User> getAllUsersByRegistrationDate(Date registrationDate);
+    List<User> getAllUsersByRegistrationDateBetween(Date initRegistrationDate, Date finalRegistrationDate);
+    List<User> getAllUsersByRegistrationDateGreaterThan(Date initRegistrationDate);
+    List<User> getAllUsersByRole(Role role);
 }

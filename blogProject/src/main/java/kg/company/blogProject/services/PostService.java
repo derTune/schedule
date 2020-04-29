@@ -6,15 +6,16 @@ import java.util.Date;
 import java.util.List;
 
 public interface PostService {
+    Post savePost(Post post);
     List<Post> getAllPosts();
     Post getPostById(Long id);
     Post updatePost(Long id, Post post);
     String deletePostById(Long id);
-    List<Post> getPostByCategoryName(String categoryName);
-    List<Post> getPostByTitle(String title);
-    List<Post> getPostByUserId(Long userId);
-    List<Post> getPostByPublicationTime(Date publicationTime);
-    List<Post> getPostByPublicationTimeBetween(Date intiPublicationTime, Date finalPublicationTime);
-    List<Post> getPostByPublicationTimeGreaterThan(Date initPublicationTime);
-    List<Post> getPostByRatingGrade(Integer ratingGrade);
+    List<Post> getAllPostsByCategoryName(String categoryName);
+    List<Post> getAllPostsByTitle(String title);
+    List<Post> getAllPostsByUserId(Long userId);
+    List<Post> getAllPostsByPublicationTime(Date publicationTime);
+    List<Post> getAllPostsByPublicationTimeBetween(Date intiPublicationTime, Date finalPublicationTime);
+    List<Post> getAllPostsByPublicationTimeGreaterThan(Date initPublicationTime);
+    List<Post> getAllPostsByTag(Long tagId);
 }
