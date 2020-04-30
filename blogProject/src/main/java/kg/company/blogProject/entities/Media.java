@@ -23,6 +23,6 @@ public class Media {
     MediaType mediaType;
 
     @ManyToOne
-    @Column(name = "post_id")
+    @JoinColumn(name = "post_id", nullable = false)
     Post post;
 }

@@ -22,10 +22,10 @@ public class Rating {
     Integer value;
 
     @ManyToOne
-    @Column(name = "post_id")
+    @JoinColumn(name = "post_id", nullable = false)
     Post post;
 
     @ManyToOne
-    @Column(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     User user;
 }

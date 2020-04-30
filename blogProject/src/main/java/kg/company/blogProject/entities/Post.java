@@ -28,7 +28,7 @@ public class Post {
     String textBody;
 
     @ManyToOne
-    @Column(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     User user;
 
     @ManyToMany
@@ -38,7 +38,7 @@ public class Post {
     List<Tag> tags;
 
     @ManyToOne
-    @Column(name = "category_id")
+    @JoinColumn(name = "category_id")
     Category category;
 
     @DateTimeFormat
