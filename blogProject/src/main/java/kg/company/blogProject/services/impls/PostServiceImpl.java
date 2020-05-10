@@ -86,7 +86,12 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<Post> getAllPostsByTag(Long tagId) {
-        return postRepo.getAllByTag(tagId);
+    public List<Post> getAllPostsByTag(String tagText) {
+        return postRepo.getAllByTag(tagText);
+    }
+
+    @Override
+    public Integer getPostCountByUserId(Long userId) {
+        return postRepo.getPostCountByUserId(userId);
     }
 }

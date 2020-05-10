@@ -17,5 +17,6 @@ public interface PostService {
     List<Post> getAllPostsByPublicationTime(Date publicationTime);
     List<Post> getAllPostsByPublicationTimeBetween(Date intiPublicationTime, Date finalPublicationTime);
     List<Post> getAllPostsByPublicationTimeGreaterThan(Date initPublicationTime);
-    List<Post> getAllPostsByTag(Long tagId);
+    List<Post> getAllPostsByTag(String tagText);
+    Integer getPostCountByUserId(Long userId);
 }

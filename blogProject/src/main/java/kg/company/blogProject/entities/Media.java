@@ -13,6 +13,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "b_media")
 public class Media {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

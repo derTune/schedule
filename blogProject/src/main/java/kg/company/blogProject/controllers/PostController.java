@@ -72,9 +72,14 @@ public class PostController {
         return postService.getAllPostsByPublicationTimeGreaterThan(time);
     }
 
-    @GetMapping("/byTag/{tag}")
-    public List<Post> getByTag(@PathVariable("tag") Long tagId) {
-        return postService.getAllPostsByTag(tagId);
+    @GetMapping("/byTag/{tagText}")
+    public List<Post> getByTag(@PathVariable("tagText") String tagText) {
+        return postService.getAllPostsByTag(tagText);
+    }
+
+    @GetMapping("/postCountById/{id}")
+    public Integer getPostCount(@PathVariable("id") Long id) {
+        return postService.getPostCountByUserId(id);
     }
 
 }

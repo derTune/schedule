@@ -35,7 +35,6 @@ public class TagServiceImpl implements TagService {
         if(tagRepo.findById(id).isPresent()) {
             Tag existingTag = tagRepo.findById(id).get();
             existingTag.setTagText(tag.getTagText());
-            existingTag.setPosts(tag.getPosts());
             Tag updatedTag = tagRepo.save(existingTag);
             return updatedTag;
         }
@@ -54,8 +53,4 @@ public class TagServiceImpl implements TagService {
         return tagRepo.getAllByTagText(tagText);
     }
 
-    @Override
-    public List<Tag> getAllTagsByPost(Long postId) {
-        return tagRepo.getAllByPost(postId);
-    }
 }

@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "b_tag")
 public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,7 +21,4 @@ public class Tag {
 
     @Column(name = "tag_text")
     String tagText;
-
-    @ManyToMany(mappedBy = "tags")
-    List<Post> posts;
 }

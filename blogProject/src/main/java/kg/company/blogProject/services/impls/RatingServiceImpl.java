@@ -1,5 +1,6 @@
 package kg.company.blogProject.services.impls;
 
+import kg.company.blogProject.entities.Post;
 import kg.company.blogProject.entities.Rating;
 import kg.company.blogProject.repos.RatingRepo;
 import kg.company.blogProject.services.RatingService;
@@ -63,5 +64,10 @@ public class RatingServiceImpl implements RatingService {
     @Override
     public List<Rating> getAllRatingsByUserId(Long userId) {
         return ratingRepo.findAllByUser_Id(userId);
+    }
+
+    @Override
+    public Long getOverall(Long postId) {
+        return ratingRepo.findOverall(postId);
     }
 }

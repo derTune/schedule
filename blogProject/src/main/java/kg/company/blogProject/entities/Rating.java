@@ -12,7 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "rating")
+@Table(name = "b_rating")
 public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

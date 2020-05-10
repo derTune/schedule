@@ -12,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "b_comment")
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -16,6 +16,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "b_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

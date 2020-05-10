@@ -12,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "b_category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

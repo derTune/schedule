@@ -1,5 +1,6 @@
 package kg.company.blogProject.controllers;
 
+import kg.company.blogProject.entities.Post;
 import kg.company.blogProject.entities.Rating;
 import kg.company.blogProject.services.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,5 +55,10 @@ public class RatingController {
     @GetMapping("/byUser/{id}")
     public List<Rating> getByUser(@PathVariable("id") Long id) {
         return ratingService.getAllRatingsByUserId(id);
+    }
+
+    @GetMapping("/overallRating/{id}")
+    public Long getOverall(@PathVariable("id") Long id) {
+        return ratingService.getOverall(id);
     }
 }
