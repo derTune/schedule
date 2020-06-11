@@ -25,7 +25,7 @@ public class ShrederApplication {
 	}
 
 	@Scheduled(cron = "1/3 * * * * ?")
-	public void returnCurrentDate() {
+	public void returnDate() {
 		System.err.println("Started " + new Date());
 		System.err.println(Thread.currentThread().getName() + "\n");
 //		try {
