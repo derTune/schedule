@@ -27,13 +27,12 @@ public class ShrederApplication {
 	@Scheduled(cron = "1/3 * * * * ?")
 	public void currentDate() {
 		System.err.println("Started " + new Date());
-		System.out.println(Thread.currentThread().getName() + "\n");
+		System.err.println(Thread.currentThread().getName() + "\n");
 //		try {
 //			Thread.sleep(4000);
 //		} catch (InterruptedException e) {
 //			e.printStackTrace();
 //		}
-
 		System.err.println("Current date = " + new Date());
 	}
 }
